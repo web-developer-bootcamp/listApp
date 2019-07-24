@@ -1,24 +1,20 @@
-var list = [];
+var list = [1,23,4,5,213213];
 var cmd = prompt("Insert comand: ");
 
 while (cmd !== "quit") {
     if (cmd === "list") {
-        console.log(list);
+        list.forEach(function (item) { console.log(item) });
     }
     else if (cmd === "new") {
-        var newCmd = prompt("push value or pop");
-        if (newCmd.startsWith("push")) {
-            var value = newCmd.split(' ');
-            if (value.length > 1) {
-                list.push(value[1]);
-            }
-        }
-        else {
-            list.pop();
-        }
+        var newValue = prompt("Insert Value: ");
+        list.push(newValue);
+    }
+    else if (cmd === "delete") {
+        var index = prompt("Insert Index: ");
+        list.splice(index,1);
     }
     var cmd = prompt("Insert comand: ");
 }
-console.log("You quit");
+console.log("YOU QUIT");
 
 
